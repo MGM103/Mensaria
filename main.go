@@ -12,7 +12,11 @@ var PORT = 8080
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		component := components.Base("Mensaria")
+		component := components.Base("Mensaria", components.Dashboard())
+		component.Render(r.Context(), w)
+	})
+	mux.HandleFunc("/add-asset", func(w http.ResponseWriter, r *http.Request) {
+		component := components.Base("Mensaria", components.Popup())
 		component.Render(r.Context(), w)
 	})
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))

@@ -1,0 +1,9 @@
+package components
+
+templ Dashboard() {
+	<div>
+		<h1>Mensaria</h1>
+		<button id="add-asset" hx-post="/add-asset" hx-target="#asset-content">Add Asset</button>
+		<div id="asset-content"></div>
+	</div>
+}
