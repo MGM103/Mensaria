@@ -29,7 +29,7 @@ func Dashboard() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><h1>Mensaria</h1><button id=\"add-asset\" hx-post=\"/add-asset\" hx-target=\"#asset-content\">Add Asset</button><div id=\"asset-content\"></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><h1 class=\"text-center\">Mensaria</h1><button id=\"add-asset\" hx-post=\"/add-asset\" hx-target=\"#asset-content\">Add Asset</button><div id=\"asset-content\"></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

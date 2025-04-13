@@ -16,8 +16,10 @@ func main() {
 		component.Render(r.Context(), w)
 	})
 	mux.HandleFunc("/add-asset", func(w http.ResponseWriter, r *http.Request) {
-		component := components.Base("Mensaria", components.Popup())
-		component.Render(r.Context(), w)
+		if r.Method == http.MethodPost {
+			component := components.Popup()
+			component.Render(r.Context(), w)
+		}
 	})
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
