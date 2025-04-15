@@ -12,7 +12,7 @@ var PORT = 8080
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		component := components.Base("Mensaria", components.Dashboard())
+		component := components.Base("Mensaria", components.Dashboard("Marcus"))
 		component.Render(r.Context(), w)
 	})
 	mux.HandleFunc("/add-asset", func(w http.ResponseWriter, r *http.Request) {

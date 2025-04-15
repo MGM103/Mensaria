@@ -1,5 +1,12 @@
 package components
 
+templ header(title string) {
+	<header class="flex intems-start justify-start p-4">
+		<img src="/static/images/mensaria-logo.svg" alt="mensaria-logo" class="w-12 h-12"/>
+		<h1 class="text-lg">{ title }</h1>
+	</header>
+}
+
 templ Base(title string, contents templ.Component) {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -10,7 +17,8 @@ templ Base(title string, contents templ.Component) {
 			<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
 			<title>{ title }</title>
 		</head>
-		<body>
+		<body class="bg-indigo-500">
+			@header("Mensaria")
 			@contents
 		</body>
 	</html>

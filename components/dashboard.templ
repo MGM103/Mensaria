@@ -1,8 +1,8 @@
 package components
 
-templ Dashboard() {
+templ Dashboard(name string) {
 	<div>
-		<h1 class="text-center">Mensaria</h1>
+		<h1 class="text-lg">G'day { name }</h1>
 		<button id="add-asset" hx-post="/add-asset" hx-target="#asset-content">Add Asset</button>
 		<div id="asset-content"></div>
 	</div>
